@@ -257,3 +257,106 @@ form {
         }
     }
 }
+// Movie Details Page
+.movie-details {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 30px;
+    background: linear-gradient(145deg, $secondary-color, $secondary-dark);
+    border-radius: $border-radius;
+    box-shadow: $card-shadow;
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 30px;
+    align-items: start;
+    color: $text-color;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: $card-shadow-hover;
+    }
+
+    h2 {
+        grid-column: 1 / -1;
+        text-align: center;
+        font-size: 2.2rem;
+        margin-bottom: 20px;
+        color: $heading-color;
+    }
+
+    img {
+        width: 100%;
+        height: 420px;
+        object-fit: cover;
+        border-radius: $border-radius;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: scale(1.03);
+        }
+    }
+
+    .movie-info {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        strong {
+            color: $primary-dark;
+        }
+    }
+
+    .rating {
+        margin-top: 10px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: $primary-color;
+    }
+
+    .back-btn {
+        margin-top: 20px;
+        align-self: flex-start;
+        padding: 10px 18px;
+        font-size: 1rem;
+        font-weight: 600;
+        color: #ffffff;
+        background: linear-gradient(90deg, $primary-color, $primary-dark);
+        border-radius: 10px;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background: linear-gradient(
+                90deg,
+                $primary-dark,
+                color.adjust($primary-dark, $lightness: -15%)
+            );
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .movie-details {
+        grid-template-columns: 1fr;
+        text-align: center;
+
+        img {
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        .movie-info {
+            align-items: center;
+        }
+    }
+}

@@ -1,14 +1,16 @@
 @if (movie) {
 <div class="movie-details">
     <h2>{{ movie.title }}</h2>
-    <img [src]="movie.posterUrl" [alt]="movie.title" alt="Movie Poster" />
-    <p><strong>Year: </strong> {{ movie.year }}</p>
-    <p><strong>Duration: </strong> {{ movie.duration }}</p>
-    <p><strong>Genres: </strong> {{ movie.genre.join(', ') }}</p>
-    <p><strong>Description: </strong> {{ movie.description }}</p>
-    <p><strong>Cast: </strong> {{ movie.cast.join(', ') }}</p>
-    <p><strong>Rating: </strong> {{ movie.rating }}</p>
+
+    <img [src]="movie.posterUrl" [alt]="movie.title" />
+
+    <div class="movie-info">
+        <p><strong>Year: </strong> {{ movie.year }}</p>
+        <p><strong>Duration: </strong> {{ movie.duration }}</p>
+        <p><strong>Genres: </strong> {{ movie.genre.join(', ') }}</p>
+        <p><strong>Description: </strong> {{ movie.description }}</p>
+        <p><strong>Cast: </strong> {{ movie.cast.join(', ') }}</p>
+        <p class="rating"><strong>Rating: </strong> {{ movie.rating }}</p>
+    </div>
 </div>
-} @else {
-<p>No movie selected.</p>
 }
