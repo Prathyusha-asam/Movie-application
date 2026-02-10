@@ -32,14 +32,13 @@ export class MovieDetails implements OnInit {
    * Fetches the movie ID from the route and retrieves the movie details.
    */
   public ngOnInit(): void {
-    this.idString = this.route.snapshot.paramMap.get('id'); // assign to property
+  this.idString = this.route.snapshot.paramMap.get('id'); // assign to property
 
-    if (this.idString) {
-      const id = parseInt(this.idString, 10);
-      this.movie = this.movieService.getById(id);
-    }
+  if (this.idString) {
+    const id = parseInt(this.idString, 10);
+    this.movie = this.movieService.getById(id);
   }
-
+}
   //#endregion
 
 }
